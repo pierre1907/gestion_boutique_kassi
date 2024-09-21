@@ -1,16 +1,11 @@
 package sn.ksi.gestion_boutique_kassi.model;
 
 import lombok.*;
-
-
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -31,4 +26,16 @@ public class Dette {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+
+    @OneToMany(mappedBy = "dette", cascade = CascadeType.ALL)
+    private List<Paiement> paiements = new ArrayList<>();
+
+
+    public List<LocalDate> getDatePaiement() {
+        List<LocalDate> dates = new ArrayList<>();
+        for (Paiement paiement : paiements) {
+            dates.add(paiement.getDate());
+        }
+        return dates;
+    }
 }

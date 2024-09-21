@@ -72,6 +72,21 @@
 			<artifactId>google-auth-library-oauth2-http</artifactId>
 			<version>0.27.0</version>
 		</dependency>
+
+
+		<!-- Spring Data MongoDB -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+
+		<!-- MongoDB Java Driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+			<version>4.9.0</version> <!-- Utilise la dernière version compatible -->
+		</dependency>
+
 	</dependencies>
 
 	<build>
