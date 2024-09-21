@@ -20,4 +20,10 @@ public class RoleService implements IRole {
         Optional<Role> role = roleRepository.findByName(roleEnum.name());
         return role.orElseThrow(() -> new RuntimeException("Rôle non trouvé: " + roleEnum.name()));
     }
+
+    @Override
+    public Role getRoleById(Long id) {
+        Optional<Role> role = roleRepository.findById(id);
+        return role.orElseThrow(() -> new RuntimeException("Rôle non trouvé: " + id));
+    }
 }

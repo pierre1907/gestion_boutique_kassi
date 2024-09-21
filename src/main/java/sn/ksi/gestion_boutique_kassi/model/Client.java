@@ -33,6 +33,7 @@ public class Client {
     private String phone;
     private String address;
     private Double totalDue = 0.0;
+    private Boolean asAccount = false;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Dette> dettes = new ArrayList<>();

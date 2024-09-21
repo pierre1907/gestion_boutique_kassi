@@ -17,10 +17,10 @@ public class Paiement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate date; // Date du paiement
-    private Double montant;  // Montant du paiement
+    private LocalDate date;
+    private Double montant;
 
     @ManyToOne
     @JoinColumn(name = "dette_id", nullable = false)
-    private Dette dette; // Lien vers la dette associée
+    private Dette dette;
 }
